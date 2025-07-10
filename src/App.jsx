@@ -8,6 +8,7 @@ import AstrologerPage from './Pages/AstrologerPage';
 import UserPage from './Pages/UserPage';
 import ProductPage from './Pages/ProductPage';
 import PoojaPage from './Pages/PoojaPage';
+import BannerPage from './Pages/BannerPage';
 // Add imports for other pages as you create them
 // import Profile from './Pages/Profile';
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="/user" element={<UserPage />} /> 
             <Route path="/products" element={<ProductPage />} /> 
              <Route path="/online-puja" element={<PoojaPage />} /> 
+              <Route path="/banner" element={<BannerPage />} /> 
             <Route path="/kundli" element={<Placeholder title="Kundli" />} />
             <Route path="/horoscope" element={<Placeholder title="Horoscope" />} />
             <Route path="/faq" element={<Placeholder title="FAQ" />} />

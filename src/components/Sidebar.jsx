@@ -13,6 +13,7 @@ const menuItems = [
   { name: "User", icon: <FaUsers />, path: "/user" },
   { name: "Products", icon: <FaShoppingBag />, path: "/products" },
   { name: "Online Puja", icon: <FaPrayingHands />, path: "/online-puja" },
+  { name: "App Banners", icon: <FaPrayingHands />, path: "/banner"},
   { name: "Kundli", icon: <FaChartPie />, path: "/kundli" },
   { name: "Horoscope", icon: <FaMoon />, path: "/horoscope" },
   { name: "FAQ", icon: <FaQuestionCircle />, path: "/faq" },

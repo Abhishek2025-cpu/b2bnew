@@ -8,6 +8,7 @@ import AstrologerPage from './Pages/AstrologerPage';
 import UserPage from './Pages/UserPage';
 import ProductPage from './Pages/ProductPage';
 import PoojaPage from './Pages/PoojaPage';
+import Login from './Pages/login';
 // Add imports for other pages as you create them
 // import Profile from './Pages/Profile';
 
@@ -40,7 +41,8 @@ function App() {
         {/* Scrollable Page Content */}
         <main style={{ flex: 1, padding: '20px', overflowY: 'auto', backgroundColor: '#fff' }}>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
            <Route path="/astrologer" element={<AstrologerPage />} /> 
             <Route path="/user" element={<UserPage />} /> 
             <Route path="/products" element={<ProductPage />} /> 

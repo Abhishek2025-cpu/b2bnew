@@ -25,7 +25,7 @@ function App() {
     return (
       <Routes>
         {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="*" element={<Navigate to="/login" />} />
+           <Route path="/" element={<Login />} />
       </Routes>
     );
   }
@@ -41,7 +41,7 @@ function App() {
         {/* Scrollable Page Content */}
         <main style={{ flex: 1, padding: '20px', overflowY: 'auto', backgroundColor: '#fff' }}>
           <Routes>
-            <Route path="/" element={<Login />} />
+        
             <Route path="/dashboard" element={<Dashboard />} />
            <Route path="/astrologer" element={<AstrologerPage />} /> 
             <Route path="/user" element={<UserPage />} /> 

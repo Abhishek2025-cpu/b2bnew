@@ -166,7 +166,7 @@ function ProductPage() {
             // Optimistic deletion
             setProducts(prev => prev.filter(p => p._id !== productId));
             // API call would go here
-            // fetch(`.../delete-product/${productId}`, { method: 'DELETE' });
+             fetch(`https://kalpyotish.onrender.com/api/products/delete-product/${productId}`, { method: 'DELETE' });
             setToastMessage('Product deleted.');
         }
     };

@@ -161,15 +161,27 @@ function ProductPage() {
         setToastMessage('Product added successfully!');
     };
 
-    const handleDelete = (productId) => {
-        if (window.confirm('Are you sure you want to delete this product?')) {
-            // Optimistic deletion
+const handleDelete = async (productId) => {
+    if (window.confirm('Are you sure you want to delete this product?')) {
+        try {
+            const res = await fetch(`https://kalpyotish.onrender.com/api/products/delete-product/${productId}`, {
+                method: 'DELETE',
+            });
+
+            if (!res.ok) {
+                const errorData = await res.json();
+                throw new Error(errorData.message || 'Failed to delete product');
+            }
+
+            setToastMessage('Product deleted successfully!');
+            // Refresh page data after deletion
             setProducts(prev => prev.filter(p => p._id !== productId));
-            // API call would go here
-             fetch(`https://kalpyotish.onrender.com/api/products/delete-product/${productId}`, { method: 'DELETE' });
-            setToastMessage('Product deleted.');
+        } catch (err) {
+            setToastMessage(`Error: ${err.message}`);
         }
-    };
+    }
+};
+
 
     if (loading) return <div style={{ textAlign: 'center', padding: '50px', fontSize: '18px' }}>Loading Products...</div>;
     if (error) return <div style={{ textAlign: 'center', padding: '50px', fontSize: '18px', color: 'red' }}>Error: {error}</div>;
